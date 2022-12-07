@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://personnages/Personnage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://ui/UI.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Arene" type="StaticBody2D"]
+
+[node name="Fond" type="Sprite" parent="."]
+modulate = Color( 0.0980392, 0.0705882, 0.12549, 1 )
+position = Vector2( 480, 270 )
+scale = Vector2( 15, 8 )
+texture = ExtResource( 2 )
+
+[node name="Mur3" type="CollisionShape2D" parent="."]
+position = Vector2( 32, 270 )
+scale = Vector2( 1, 7 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Mur3"]
+modulate = Color( 0.262745, 0, 0.54902, 1 )
+texture = ExtResource( 2 )
+
+[node name="Mur4" type="CollisionShape2D" parent="."]
+position = Vector2( 928, 270 )
+scale = Vector2( 1, 7 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Mur4"]
+modulate = Color( 0.262745, 0, 0.54902, 1 )
+texture = ExtResource( 2 )
+
+[node name="Mur" type="CollisionShape2D" parent="."]
+position = Vector2( 480, 32 )
+scale = Vector2( 15, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Mur"]
+modulate = Color( 0.262745, 0, 0.54902, 1 )
+texture = ExtResource( 2 )
+
+[node name="Mur2" type="CollisionShape2D" parent="."]
+position = Vector2( 480, 508 )
+scale = Vector2( 15, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Mur2"]
+modulate = Color( 0.262745, 0, 0.54902, 1 )
+texture = ExtResource( 2 )
+
+[node name="Personnage" parent="." instance=ExtResource( 1 )]
+position = Vector2( 210, 255 )
+
+[node name="Personnage2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 745, 260 )
+playerInputPrefix = "p2_"
+
+[node name="UI" parent="." instance=ExtResource( 4 )]
